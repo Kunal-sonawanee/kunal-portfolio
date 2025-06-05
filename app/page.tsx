@@ -696,70 +696,78 @@ export default function Portfolio() {
         </div>
       </section>
 
-     {/* Blog Section */}
+ {/* Blog Section */}
 <section id="blog" className="py-20 bg-gradient-to-br from-indigo-50 to-blue-50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-16">
       <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Blog & Insights</h2>
       <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-        Sharing my learning journey, technical insights, and spiritual thoughts
+        Sharing my learning journey, technical insights and thoughts
       </p>
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
       {/* Blog 1 */}
-      <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
-        <div className="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 p-6 text-white">
-          <BookOpen className="h-8 w-8 mb-4" />
-          <h3 className="text-xl font-semibold">5 Lessons I Learned From Failing a Coding Interview</h3>
-          <p className="text-blue-100 mt-2">Career & Growth</p>
-        </div>
-        <CardContent className="p-6">
-          <p className="text-gray-600 mb-4">
-            A personal breakdown of what went wrong, what I learned, and how failure shaped my mindset for future opportunities.
-          </p>
-          <div className="flex items-center justify-between">
-            <Badge variant="secondary">Interviews</Badge>
-            <span className="text-sm text-gray-500">6 min read</span>
+      <a href="https://medium.com/@sonawanekunal289/escaping-tutorial-hell-a-guide-for-learners-5837650e6309" target="_blank" rel="noopener noreferrer">
+        <Card className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
+          <div className="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 p-6 text-white">
+            <BookOpen className="h-8 w-8 mb-4" />
+            <h3 className="text-xl font-semibold">Escaping Tutorial Hell: A Guide for Learners</h3>
+            <p className="text-blue-100 mt-2">Learning & Education</p>
           </div>
-        </CardContent>
-      </Card>
+          <CardContent className="p-6">
+            <p className="text-gray-600 mb-4">
+              Tutorial hell is a common trap for learners, where you keep consuming content without applying it. The key to escaping this cycle is to start building projects, no matter how small. Focus on practical application and gradually increase the complexity of your projects.
+            </p>
+            <div className="flex items-center justify-between">
+              <Badge variant="secondary">Tutorials</Badge>
+              <span className="text-sm text-gray-500">3 min read</span>
+            </div>
+          </CardContent>
+        </Card>
+      </a>
 
       {/* Blog 2 */}
-      <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
-        <div className="h-48 bg-gradient-to-br from-purple-500 to-pink-600 p-6 text-white">
-          <Heart className="h-8 w-8 mb-4" />
-          <h3 className="text-xl font-semibold">Mindfulness for Developers</h3>
-          <p className="text-purple-100 mt-2">Spiritual + Tech</p>
-        </div>
-        <CardContent className="p-6">
-          <p className="text-gray-600 mb-4">
-            Combining meditation, self-awareness, and coding practices to build not just better apps—but a better mindset.
-          </p>
-          <div className="flex items-center justify-between">
-            <Badge variant="secondary">Spirituality</Badge>
-            <span className="text-sm text-gray-500">7 min read</span>
+      <a href="https://medium.com/@sonawanekunal289/how-ai-is-revolutionizing-web-development-my-experience-with-cursor-ai-5d9637537f3d" target="_blank" rel="noopener noreferrer">
+        <Card className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
+          <div className="h-48 bg-gradient-to-br from-purple-500 to-pink-600 p-6 text-white">
+            <Heart className="h-8 w-8 mb-4" />
+            <h3 className="text-xl font-semibold">How AI is Revolutionizing Web Development: My Experience with Cursor AI</h3>
+            <p className="text-purple-100 mt-2">AI + Web Development</p>
           </div>
-        </CardContent>
-      </Card>
+          <CardContent className="p-6">
+            <p className="text-gray-600 mb-4">
+              Exploring how AI tools like Cursor AI are transforming the way we build websites, making development faster and more intuitive.
+              My firsthand experience with these tools and their impact on my workflow.
+            </p>
+            <div className="flex items-center justify-between">
+              <Badge variant="secondary">Revolution</Badge>
+              <span className="text-sm text-gray-500">4 min read</span>
+            </div>
+          </CardContent>
+        </Card>
+      </a>
 
       {/* Blog 3 */}
-      <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
-        <div className="h-48 bg-gradient-to-br from-green-500 to-teal-600 p-6 text-white">
-          <Code className="h-8 w-8 mb-4" />
-          <h3 className="text-xl font-semibold">Building My First Full-Stack App</h3>
-          <p className="text-green-100 mt-2">Project Insights</p>
-        </div>
-        <CardContent className="p-6">
-          <p className="text-gray-600 mb-4">
-            A behind-the-scenes look at the challenges, tools, and architecture I used to build a working full-stack application.
-          </p>
-          <div className="flex items-center justify-between">
-            <Badge variant="secondary">Full Stack</Badge>
-            <span className="text-sm text-gray-500">5 min read</span>
+      <a href="https://medium.com/@sonawanekunal289/the-power-of-connections-more-than-just-networking-in-tech-3faded81e380" target="_blank" rel="noopener noreferrer">
+        <Card className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
+          <div className="h-48 bg-gradient-to-br from-green-500 to-teal-600 p-6 text-white">
+            <Code className="h-8 w-8 mb-4" />
+            <h3 className="text-xl font-semibold">Power Of Connections : More Than Just Networking in Tech</h3>
+            <p className="text-green-100 mt-2">Networking Insights</p>
           </div>
-        </CardContent>
-      </Card>
+          <CardContent className="p-6">
+            <p className="text-gray-600 mb-4">
+              Connections aren’t just about exchanging business cards or LinkedIn requests. They’re about building genuine relationships. When you connect with someone, think about how you can help them, not just how they can help you. The most powerful connections are built on trust, respect, and mutual growth.
+            </p>
+            <div className="flex items-center justify-between">
+              <Badge variant="secondary">Networking</Badge>
+              <span className="text-sm text-gray-500">4 min read</span>
+            </div>
+          </CardContent>
+        </Card>
+      </a>
     </div>
 
     {/* Read All Articles Button */}
@@ -778,7 +786,7 @@ export default function Portfolio() {
   </div>
 </section>
 
-      {/* Spiritual Touch Section */}
+{/* Spiritual Touch Section 
       <section id="spiritual" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -834,7 +842,7 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-
+*/}
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -941,7 +949,7 @@ export default function Portfolio() {
 >
                 <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                   <Download className="mr-2 h-4 w-4" />
-                  Download Resume (Updated Dec 2024)
+                  Download Resume 
                 </Button>
                 </a>
               </Card>
