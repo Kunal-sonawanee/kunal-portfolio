@@ -1023,9 +1023,7 @@ export default function Portfolio() {
             </div>
             <div className="border-t border-gray-800 pt-8">
               <p className="text-gray-400 text-sm">© 2024 Kunal Sonawane. Made with ❤️ and lots of ☕</p>
-              <p className="text-gray-500 text-xs mt-2">
-                "I am not just here for myself, I'm my parents' investment — and I will give the best returns."
-              </p>
+              
             </div>
           </div>
         </div>
