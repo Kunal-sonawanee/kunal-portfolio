@@ -205,7 +205,7 @@ export default function Portfolio() {
                 <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 p-1">
                   <div className="w-full h-full rounded-full bg-white p-2">
                     <img
-                      src="https://media.licdn.com/dms/image/v2/D4D03AQH5dLAny19ucA/profile-displayphoto-shrink_800_800/B4DZcoeL8fHMAg-/0/1748730692439?e=1754524800&v=beta&t=YSttuLL4canXbZLjYCRoSg8FueV4glWzEqyH2wh-qwk"
+                      src="/cropped.png"
                       alt="Kunal Sonawane"
                       className="w-full h-full rounded-full object-cover"
                     />
