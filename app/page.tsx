@@ -156,10 +156,10 @@ export default function Portfolio() {
                   👋
                 </h1>
                 <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed">
-                  I build full-stack web applications, solve algorithmic problems, and explore the spiritual path.
+                  I build full-stack web applications, solve algorithmic problems, and exploring computer science.
                 </p>
                 <p className="text-lg text-gray-500">
-                  MCA Student at MIT World Peace University, Pune | Passionate Developer | Problem Solver
+                  MCA Student at MIT World Peace University, Pune | Passionate Developer | Problem Solving
                 </p>
               </div>
 
