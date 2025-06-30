@@ -243,16 +243,16 @@ export default function Portfolio() {
                 </p>
               </Card>
 
-              <Card className="p-6 border-l-4 border-l-purple-500">
+{/*               <Card className="p-6 border-l-4 border-l-purple-500">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">My Philosophy</h3>
                 <blockquote className="text-lg italic text-gray-700 border-l-4 border-gray-300 pl-4">
-                  "I am not just here for myself, I'm my parents' investment — and I will give the best returns."
+                  
                 </blockquote>
                 <p className="text-gray-600 mt-3">
                   This quote drives me every day. As a single child, I carry the responsibility and dreams of my family,
                   which motivates me to push beyond my limits.
                 </p>
-              </Card>
+              </Card> */}
 
               <Card className="p-6 border-l-4 border-l-green-500">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Personal Values</h3>
