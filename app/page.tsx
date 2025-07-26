@@ -675,24 +675,7 @@ export default function Portfolio() {
       </Card>
     </div>
 
-     <div className="mt-12">
-            <Card className="p-6 bg-gradient-to-r from-blue-50 to-purple-50">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Code Snippet Showcase</h3>
-              <div className="bg-gray-900 rounded-lg p-4 text-green-400 font-mono text-sm overflow-x-auto">
-                <div className="mb-2">{"// Binary Search Implementation"}</div>
-                <div className="mb-2">{"public int binarySearch(int[] arr, int target) {"}</div>
-                <div className="mb-2 ml-4">{"int left = 0, right = arr.length - 1;"}</div>
-                <div className="mb-2 ml-4">{"while (left <= right) {"}</div>
-                <div className="mb-2 ml-8">{"int mid = left + (right - left) / 2;"}</div>
-                <div className="mb-2 ml-8">{"if (arr[mid] == target) return mid;"}</div>
-                <div className="mb-2 ml-8">{"else if (arr[mid] < target) left = mid + 1;"}</div>
-                <div className="mb-2 ml-8">{"else right = mid - 1;"}</div>
-                <div className="mb-2 ml-4">{"}"}</div>
-                <div className="mb-2 ml-4">{"return -1;"}</div>
-                <div>{"}"}</div>
-              </div>
-            </Card>
-          </div>
+   
         </div>
       </section>
 
