@@ -28,6 +28,9 @@ import {
   ChevronDown,
   Menu,
   X,
+  Shield,
+  Cpu,
+  Globe,
 } from "lucide-react"
 
 export default function Portfolio() {
@@ -36,7 +39,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "skills", "projects", "achievements", "coding", "blog", "spiritual", "contact"]
+      const sections = ["hero", "about", "skills", "projects", "research", "achievements", "coding", "blog", "contact"]
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -64,13 +67,13 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
+      <nav className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-md border-b border-slate-700 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold text-white hover:text-gray-300 transition-colors duration-200">
                 KS
               </span>
             </div>
@@ -83,6 +86,7 @@ export default function Portfolio() {
                   { id: "about", label: "About" },
                   { id: "skills", label: "Skills" },
                   { id: "projects", label: "Projects" },
+                  { id: "research", label: "Research" },
                   { id: "achievements", label: "Achievements" },
                   { id: "coding", label: "Coding" },
                   { id: "blog", label: "Blog" },
@@ -91,10 +95,10 @@ export default function Portfolio() {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                       activeSection === item.id
-                        ? "text-blue-600 bg-blue-50"
-                        : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                        ? "text-white bg-slate-700"
+                        : "text-gray-300 hover:text-white hover:bg-slate-800"
                     }`}
                   >
                     {item.label}
@@ -107,7 +111,7 @@ export default function Portfolio() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                className="p-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-800 transition-colors duration-200"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -118,12 +122,13 @@ export default function Portfolio() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-900 border-t border-slate-700">
               {[
                 { id: "hero", label: "Home" },
                 { id: "about", label: "About" },
                 { id: "skills", label: "Skills" },
                 { id: "projects", label: "Projects" },
+                { id: "research", label: "Research" },
                 { id: "achievements", label: "Achievements" },
                 { id: "coding", label: "Coding" },
                 { id: "blog", label: "Blog" },
@@ -132,7 +137,7 @@ export default function Portfolio() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 w-full text-left transition-colors duration-200"
                 >
                   {item.label}
                 </button>
@@ -142,7 +147,6 @@ export default function Portfolio() {
         )}
       </nav>
 
-      {/* Hero Section */}
       <section id="hero" className="pt-16 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -150,31 +154,31 @@ export default function Portfolio() {
               <div className="space-y-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
                   Hi, I'm{" "}
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="text-gray-800 font-semibold">
                     Kunal Sonawane
                   </span>{" "}
-                  👋
+                  👋🏻
                 </h1>
-                <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed">
-                  I build full-stack web applications, solve algorithmic problems, and exploring computer science.
-                </p>
-                <p className="text-lg text-gray-500">
-                  MCA Student at MIT World Peace University, Pune | Passionate Developer | Problem Solving
-                </p>
+               <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed">
+  Full-Stack Developer & Researcher with expertise in building scalable web applications, blockchain technology, and machine learning solutions. Passionate about solving complex algorithmic challenges and contributing to open-source projects.
+</p>
+<p className="text-lg text-gray-600">
+  MCA Student at MIT World Peace University, Pune · Conference Speaker (ICT4SD 2025) · 550+ LeetCode Problems Solved · Open to Contribute
+</p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
               <a
-  href="https://drive.google.com/file/d/1EdGQT-kP9MsphPxeKWT21X7f4qEkc2T4/view?usp=sharing"
+  href="https://drive.google.com/file/d/11ZNvvM5GCcaVPZREEfwtwVsHYkJRgca2/view?usp=drive_link"
   target="_blank"
   rel="noopener noreferrer"
 >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  className="bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 shadow-lg hover:shadow-xl transition-all duration-200 font-semibold"
                 >
                   <Download className="mr-2 h-5 w-5" />
-                  Get My Resume
+                  Download Resume
                 </Button>
                 </a>
                 <Button size="lg" variant="outline" onClick={() => scrollToSection("contact")}>
@@ -188,13 +192,13 @@ export default function Portfolio() {
               </div>
 
               <div className="flex items-center space-x-6">
-                <a href="https://github.com/Kunal-sonawanee" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <a href="https://github.com/Kunal-sonawanee" className="text-gray-600 hover:text-slate-900 transition-colors">
                   <Github size={24} />
                 </a>
-                <a href="https://linkedin.com/in/kunalsonawane224" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <a href="https://linkedin.com/in/kunalsonawane224" className="text-gray-600 hover:text-slate-900 transition-colors">
                   <Linkedin size={24} />
                 </a>
-                <a href="https://instagram.com/kunal.sonawanee" className="text-gray-600 hover:text-pink-600 transition-colors">
+                <a href="https://instagram.com/kunal.sonawanee" className="text-gray-600 hover:text-slate-900 transition-colors">
                   <Instagram size={24} />
                 </a>
               </div>
@@ -202,7 +206,7 @@ export default function Portfolio() {
 
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 p-1">
+                <div className="w-96 h-96 rounded-full bg-slate-200 p-1">
                   <div className="w-full h-full rounded-full bg-white p-2">
                     <img
                       src="/cropped.png"
@@ -211,7 +215,6 @@ export default function Portfolio() {
                     />
                   </div>
                 </div>
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
               </div>
             </div>
           </div>
@@ -222,7 +225,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -232,89 +234,55 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <Card className="p-6 border-l-4 border-l-blue-500">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">My Journey</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Born and raised in Nashik, I made the bold decision to move to Pune to pursue my MCA at MIT World
-                  Peace University. Living away from family has taught me independence, resilience, and the true value
-                  of dedication. With a current CGPA of 8.44, I'm committed to excellence in everything I do.
-                </p>
-              </Card>
-
-{/*               <Card className="p-6 border-l-4 border-l-purple-500">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">My Philosophy</h3>
-                <blockquote className="text-lg italic text-gray-700 border-l-4 border-gray-300 pl-4">
-                  
-                </blockquote>
-                <p className="text-gray-600 mt-3">
-                  This quote drives me every day. As a single child, I carry the responsibility and dreams of my family,
-                  which motivates me to push beyond my limits.
-                </p>
-              </Card> */}
-
-              <Card className="p-6 border-l-4 border-l-green-500">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Personal Values</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  I'm a native Marathi speaker working on mastering English fluency. I love meaningful conversations,
-                  embrace spiritual values, and believe in the power of continuous learning. My connection to
-                  spirituality keeps me grounded while my passion for technology drives me forward.
-                </p>
-              </Card>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="p-6">
-                <div className="flex items-center mb-4">
-                  <GraduationCap className="h-6 w-6 text-blue-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-gray-900">Education</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <Card className="p-6">
+              <div className="flex items-center mb-4">
+                <GraduationCap className="h-6 w-6 text-slate-600 mr-3" />
+                <h3 className="text-xl font-semibold text-gray-900">Education</h3>
+              </div>
+              <div className="space-y-4">
+                <div className="border-l-2 border-slate-200 pl-4">
+                  <h4 className="font-semibold text-gray-900">Master of Computer Applications (MCA)</h4>
+                  <p className="text-gray-600">MIT World Peace University, Pune</p>
+                  <p className="text-sm text-gray-500">Current CGPA: 8.44</p>
                 </div>
-                <div className="space-y-4">
-                  <div className="border-l-2 border-blue-200 pl-4">
-                    <h4 className="font-semibold text-gray-900">Master of Computer Applications (MCA)</h4>
-                    <p className="text-gray-600">MIT World Peace University, Pune</p>
-                    <p className="text-sm text-gray-500">Current CGPA: 8.44</p>
-                  </div>
-                  <div className="border-l-2 border-purple-200 pl-4">
-                    <h4 className="font-semibold text-gray-900">B.Sc. Computer Science</h4>
-                    <p className="text-gray-600">KVN Naik College, Nashik (SPPU)</p>
-                    <p className="text-sm text-gray-500">Third Highest GPA: 9.27</p>
-                  </div>
-                  <div className="border-l-2 border-green-200 pl-4">
-                    <h4 className="font-semibold text-gray-900">Higher Secondary (12th)</h4>
-                    <p className="text-gray-600">79%</p>
-                  </div>
+                <div className="border-l-2 border-slate-200 pl-4">
+                  <h4 className="font-semibold text-gray-900">B.Sc. Computer Science</h4>
+                  <p className="text-gray-600">KVN Naik College, Nashik (SPPU)</p>
+                  <p className="text-sm text-gray-500">Third highest GPA: 9.27</p>
                 </div>
-              </Card>
+                <div className="border-l-2 border-slate-200 pl-4">
+                  <h4 className="font-semibold text-gray-900">Higher Secondary (12th)</h4>
+                  <p className="text-gray-600">79%</p>
+                </div>
+              </div>
+            </Card>
 
-              <Card className="p-6">
-                <div className="flex items-center mb-4">
-                  <MapPin className="h-6 w-6 text-purple-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-gray-900">Location & Languages</h3>
+            <Card className="p-6">
+              <div className="flex items-center mb-4">
+                <MapPin className="h-6 w-6 text-slate-600 mr-3" />
+                <h3 className="text-xl font-semibold text-gray-900">Location & Languages</h3>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">From:</span>
+                  <span className="font-medium">Nashik, Maharashtra</span>
                 </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">From:</span>
-                    <span className="font-medium">Nashik, Maharashtra</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Currently:</span>
-                    <span className="font-medium">Pune, Maharashtra</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Languages:</span>
-                    <span className="font-medium">Marathi, Hindi, English</span>
-                  </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Currently:</span>
+                  <span className="font-medium">Pune, Maharashtra</span>
                 </div>
-              </Card>
-            </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Languages:</span>
+                  <span className="font-medium">Marathi, Hindi, English</span>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section id="skills" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
@@ -326,12 +294,12 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
-                <Code className="h-6 w-6 text-blue-600 mr-3" />
+                <Code className="h-6 w-6 text-slate-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-900">Programming Languages</h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {["Java", "Python", "JavaScript", "C", "C++", "PHP"].map((skill) => (
-                  <Badge key={skill} variant="secondary" className="bg-blue-100 text-blue-800">
+                  <Badge key={skill} variant="secondary" className="bg-slate-100 text-slate-800">
                     {skill}
                   </Badge>
                 ))}
@@ -340,12 +308,12 @@ export default function Portfolio() {
 
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
-                <ExternalLink className="h-6 w-6 text-purple-600 mr-3" />
+                <ExternalLink className="h-6 w-6 text-slate-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-900">Web Technologies</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                {["HTML", "CSS", "MySQL", "TailwindCSS", "ReactJS", "Spring Boot", "JSP", "Servlets"].map((skill) => (
-                  <Badge key={skill} variant="secondary" className="bg-purple-100 text-purple-800">
+                {["HTML", "CSS", "JavaScript", "Python", "Java", "MySQL", "TailwindCSS", "ReactJS", "Spring Boot", "JSP", "Servlets"].map((skill) => (
+                  <Badge key={skill} variant="secondary" className="bg-slate-100 text-slate-800">
                     {skill}
                   </Badge>
                 ))}
@@ -354,12 +322,26 @@ export default function Portfolio() {
 
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
-                <Briefcase className="h-6 w-6 text-green-600 mr-3" />
+                <Shield className="h-6 w-6 text-slate-600 mr-3" />
+                <h3 className="text-xl font-semibold text-gray-900">Advanced Technologies</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["Cloud Computing", "Microservices", "NLP"].map((skill) => (
+                  <Badge key={skill} variant="secondary" className="bg-slate-100 text-slate-800">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </Card>
+
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <Briefcase className="h-6 w-6 text-slate-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-900">Tools & Platforms</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                {["IntelliJ IDEA", "Ubuntu", "Windows", "Postman", "Git", "GitHub", "WAMP"].map((skill) => (
-                  <Badge key={skill} variant="secondary" className="bg-green-100 text-green-800">
+                {["IntelliJ IDEA", "VS Code", "Ubuntu", "Windows", "Postman", "Git", "GitHub","Jupyter"].map((skill) => (
+                  <Badge key={skill} variant="secondary" className="bg-slate-100 text-slate-800">
                     {skill}
                   </Badge>
                 ))}
@@ -368,13 +350,13 @@ export default function Portfolio() {
 
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
-                <Heart className="h-6 w-6 text-red-600 mr-3" />
+                <Heart className="h-6 w-6 text-slate-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-900">Soft Skills</h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {["Problem Solving", "Critical Thinking", "Communication", "Event Management", "Time Management"].map(
                   (skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-red-100 text-red-800">
+                    <Badge key={skill} variant="secondary" className="bg-slate-100 text-slate-800">
                       {skill}
                     </Badge>
                   ),
@@ -384,12 +366,12 @@ export default function Portfolio() {
 
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
-                <BookOpen className="h-6 w-6 text-indigo-600 mr-3" />
+                <BookOpen className="h-6 w-6 text-slate-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-900">Core Concepts</h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {["OOP", "DSA", "DBMS", "Operating Systems", "Computer Networks"].map((skill) => (
-                  <Badge key={skill} variant="secondary" className="bg-indigo-100 text-indigo-800">
+                  <Badge key={skill} variant="secondary" className="bg-slate-100 text-slate-800">
                     {skill}
                   </Badge>
                 ))}
@@ -398,12 +380,12 @@ export default function Portfolio() {
 
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
-                <MessageCircle className="h-6 w-6 text-orange-600 mr-3" />
+                <MessageCircle className="h-6 w-6 text-slate-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-900">Languages Known</h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {["English", "Marathi", "Hindi"].map((skill) => (
-                  <Badge key={skill} variant="secondary" className="bg-orange-100 text-orange-800">
+                  <Badge key={skill} variant="secondary" className="bg-slate-100 text-slate-800">
                     {skill}
                   </Badge>
                 ))}
@@ -412,140 +394,215 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-{/* Projects Section */}
 <section id="projects" className="py-20 bg-white">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-16">
-      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Projects</h2>
       <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-        A showcase of my technical skills and problem-solving abilities
+        A collection of projects showcasing my technical skills and learning journey
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {/* CloudForge */}
-      <Card className="overflow-hidden hover:shadow-xl transition-shadow group">
-        <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-          <div className="absolute bottom-4 left-4 text-white">
-            <Code className="h-8 w-8" />
-          </div>
-        </div>
-        <CardHeader>
-          <CardTitle className="flex items-center justify-between">
-            <a
-              href="https://github.com/Kunal-sonawanee/CloudForge"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline flex items-center gap-2"
-            >
-              CloudForge
-              <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-blue-600 transition-colors" />
-            </a>
-          </CardTitle>
-          <CardDescription>Cloud-based IDE Platform</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-600 mb-4">
-            A comprehensive cloud-based IDE with terminal, coding panel, and dashboard. I handled the dashboard
-            module using UI.shadcn and modern libraries.
+    <div className="max-w-4xl mx-auto">
+      <Card className="p-8">
+        <div className="text-center mb-8">
+          <Github className="h-16 w-16 text-slate-600 mx-auto mb-4" />
+          <h3 className="text-2xl font-semibold text-gray-900 mb-4">My Development Journey</h3>
+          <p className="text-gray-600 mb-6">
+            I've worked on various projects spanning different technologies and domains. 
+            Here's an overview of my key projects that demonstrate my skills and growth as a developer.
           </p>
-          <div className="flex flex-wrap gap-2">
-            <Badge variant="outline">React</Badge>
-            <Badge variant="outline">shadcn/ui</Badge>
-            <Badge variant="outline">Node.js</Badge>
-          </div>
-        </CardContent>
-      </Card>
+        </div>
 
-      {/* E-Commerce App */}
-      <Card className="overflow-hidden hover:shadow-xl transition-shadow group">
-        <div className="h-48 bg-gradient-to-br from-green-500 to-blue-600 relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-          <div className="absolute bottom-4 left-4 text-white">
-            <Briefcase className="h-8 w-8" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="space-y-4">
+            <h4 className="font-semibold text-gray-900 text-lg">Web Development</h4>
+            <ul className="space-y-2 text-gray-600">
+              <li>• <strong>CodeScroll:</strong> Instagram like platform for computer science concepts and sharing</li>
+              <li>• <strong>E-Commerce App:</strong> Full-stack shopping solution</li>
+              <li>• <strong>Leave Management System:</strong> Enterprise application</li>
+            </ul>
+          </div>
+          
+          <div className="space-y-4">
+            <h4 className="font-semibold text-gray-900 text-lg">Specialized Projects</h4>
+            <ul className="space-y-2 text-gray-600">
+              <li>• <strong>IoT Cattle Healthcare:</strong> Research implementation</li>
+              <li>• <strong>AI Task Manager:</strong> ML-powered productivity tool</li>
+            </ul>
           </div>
         </div>
-        <CardHeader>
-          <CardTitle className="flex items-center justify-between">
-            <a
-              href="https://github.com/Kunal-sonawanee/kharedi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline flex items-center gap-2"
-            >
-              E-Commerce App
-              <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-green-600 transition-colors" />
-            </a>
-          </CardTitle>
-          <CardDescription>Full-Stack E-Commerce Solution</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-600 mb-4">
-            Complete e-commerce application built with Spring Boot and PostgreSQL, featuring product cart, payment
-            integration, and admin dashboard.
-          </p>
+
+        <div className="bg-slate-50 rounded-lg p-6 mb-6">
+          <h4 className="font-semibold text-gray-900 mb-3">Technologies Used Across Projects:</h4>
           <div className="flex flex-wrap gap-2">
-            <Badge variant="outline">Spring Boot</Badge>
-            <Badge variant="outline">PostgreSQL</Badge>
             <Badge variant="outline">Java</Badge>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Leave Management System */}
-      <Card className="overflow-hidden hover:shadow-xl transition-shadow group">
-        <div className="h-48 bg-gradient-to-br from-purple-500 to-pink-600 relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-          <div className="absolute bottom-4 left-4 text-white">
-            <Calendar className="h-8 w-8" />
+            <Badge variant="outline">Spring Boot</Badge>
+            <Badge variant="outline">React</Badge>
+            <Badge variant="outline">Python</Badge>
+            <Badge variant="outline">MySQL</Badge>
+            <Badge variant="outline">PostgreSQL</Badge>
+            <Badge variant="outline">IoT</Badge>
+           
           </div>
         </div>
-        <CardHeader>
-          <CardTitle className="flex items-center justify-between">
-            <a
-              href="https://github.com/Kunal-sonawanee/elms"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline flex items-center gap-2"
-            >
-              Leave Management System
-              <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-purple-600 transition-colors" />
-            </a>
-          </CardTitle>
-          <CardDescription>Enterprise Leave Management</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-600 mb-4">
-            Servlet-JSP based system for applying and approving leaves with role-based access control and
-            comprehensive reporting features.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <Badge variant="outline">JS</Badge>
-            <Badge variant="outline">PHP</Badge>
-            <Badge variant="outline">MySQL</Badge>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
 
-    {/* GitHub Button */}
-    <div className="mt-12 text-center">
-      <a
-        href="https://github.com/Kunal-sonawanee?tab=repositories"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button variant="outline" size="lg">
-          <Github className="mr-2 h-5 w-5" />
-          View All Projects on GitHub
-        </Button>
-      </a>
+        <div className="text-center">
+          <a
+            href="https://github.com/Kunal-sonawanee?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white">
+              <Github className="mr-2 h-5 w-5" />
+              View All Projects on GitHub
+            </Button>
+          </a>
+          <p className="text-sm text-gray-500 mt-3">
+            Explore my complete project portfolio, source code, and documentation
+          </p>
+        </div>
+      </Card>
     </div>
   </div>
 </section>
-      {/* Achievements Section */}
-      <section id="achievements" className="py-20 bg-gradient-to-br from-yellow-50 to-orange-50">
+
+<section id="research" className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Research & Publications</h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Contributing to the academic community through innovative research in technology
+      </p>
+    </div>
+
+    <div className="max-w-4xl mx-auto">
+      <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+        <CardHeader className="bg-slate-50">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="p-2 bg-slate-900 rounded-lg">
+                <BookOpen className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <CardTitle className="text-xl text-gray-900">
+                  An IoT-Powered Real-Time Cattle Health Monitoring System for Enhanced Agricultural Productivity
+                </CardTitle>
+                <CardDescription className="text-slate-600 mt-1">
+                   Research Paper • Presented at ICT4SD 2025 Conference
+                </CardDescription>
+              </div>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="p-6">
+          <div className="space-y-4">
+            <p className="text-gray-700 leading-relaxed">
+              This research presents an innovative IoT-based system for real-time cattle health monitoring to enhance 
+              agricultural productivity. The system utilizes wearable sensors to continuously monitor vital parameters 
+              such as body temperature, heart rate, and activity levels, transmitting data wirelessly to a cloud server 
+              for analysis and early disease detection through a user-friendly mobile application.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
+              <div className="space-y-2">
+                <h4 className="font-semibold text-gray-900">Key Contributions:</h4>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• IoT-based real-time cattle health monitoring</li>
+                  <li>• Wearable sensor integration for vital parameters</li>
+                  <li>• Cost-effective solution for smallholder farmers</li>
+                  <li>• Mobile application for real-time alerts</li>
+                </ul>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-semibold text-gray-900">Technologies Used:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline">IoT</Badge>
+                  <Badge variant="outline">Wearable Sensors</Badge>
+                  <Badge variant="outline">Cloud Computing</Badge>
+                  <Badge variant="outline">Mobile App</Badge>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center text-sm text-gray-500">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  Presented at ICT4SD 2025
+                </div>
+                <div className="flex items-center text-sm text-gray-500">
+                  <User className="h-4 w-4 mr-1" />
+                  Lead Author & Presenter
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <a
+                  href="https://www.youtube.com/watch?v=J73On-ga6Ss&t=2820s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-slate-600 hover:text-slate-900 transition-colors"
+                >
+                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                  <span className="font-medium">Watch Presentation</span>
+                </a>
+                <a
+                  href="https://drive.google.com/file/d/1QIbvxFgyUUeHn3lcpjl2qKQOUkYgdqjM/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-slate-600 hover:text-slate-900 transition-colors"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  <span className="font-medium">Read Full Paper</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Future Research Interests */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Research Interests</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+            <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <Shield className="h-6 w-6 text-slate-600" />
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">IoT & Agriculture</h4>
+            <p className="text-sm text-gray-600">
+              Developing smart solutions for precision agriculture and livestock monitoring
+            </p>
+          </Card>
+          
+          <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+            <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <Cpu className="h-6 w-6 text-slate-600" />
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">Machine Learning</h4>
+            <p className="text-sm text-gray-600">
+              Developing AI-driven solutions for complex problem-solving scenarios
+            </p>
+          </Card>
+          
+          <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+            <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <Globe className="h-6 w-6 text-slate-600" />
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">Distributed Systems</h4>
+            <p className="text-sm text-gray-600">
+              Research in scalable and fault-tolerant distributed computing systems
+            </p>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section id="achievements" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Achievements & Recognition</h2>
@@ -555,58 +612,69 @@ export default function Portfolio() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="p-6 border-l-4 border-l-yellow-500 hover:shadow-lg transition-shadow">
+            <Card className="p-6 border-l-4 border-l-slate-500 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
-                <Trophy className="h-8 w-8 text-yellow-600 mr-3" />
+                <BookOpen className="h-8 w-8 text-slate-600 mr-3" />
+                <h3 className="text-xl font-semibold text-gray-900">Research Publication</h3>
+              </div>
+              <p className="text-gray-600 mb-3">
+                Authored and presented a research paper on "IoT-Powered Real-Time Cattle Health Monitoring System" 
+                at the ICT4SD 2025 international conference, contributing to academic literature in IoT applications and precision agriculture.
+              </p>
+              <Badge className="bg-slate-100 text-slate-800">Presented at ICT4SD 2025</Badge>
+            </Card>
+
+            <Card className="p-6 border-l-4 border-l-slate-500 hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <Trophy className="h-8 w-8 text-slate-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-900">LeetCode Excellence</h3>
               </div>
               <p className="text-gray-600 mb-3">
-                Achieved Top 4% globally on LeetCode with a consistent 100-day streak, demonstrating exceptional
-                problem-solving skills and dedication.
+                Solved 550+ problems on LeetCode with consistent practice, demonstrating exceptional
+                problem-solving skills and algorithmic thinking abilities.
               </p>
-              <Badge className="bg-yellow-100 text-yellow-800">Top 1% Global</Badge>
+              <Badge className="bg-slate-100 text-slate-800">550+ Problems</Badge>
             </Card>
 
-            <Card className="p-6 border-l-4 border-l-blue-500 hover:shadow-lg transition-shadow">
+            <Card className="p-6 border-l-4 border-l-slate-500 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
-                <Star className="h-8 w-8 text-blue-600 mr-3" />
+                <Star className="h-8 w-8 text-slate-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-900">Coding Competitions</h3>
               </div>
               <p className="text-gray-600 mb-3">
                 Two-time winner of inter-college coding competitions, showcasing algorithmic thinking and competitive
-                programming skills.
+                programming skills in data structures and algorithms.
               </p>
-              <Badge className="bg-blue-100 text-blue-800">2x Winner</Badge>
+              <Badge className="bg-slate-100 text-slate-800">2x Winner</Badge>
             </Card>
 
-            <Card className="p-6 border-l-4 border-l-green-500 hover:shadow-lg transition-shadow">
+            <Card className="p-6 border-l-4 border-l-slate-500 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
-                <GraduationCap className="h-8 w-8 text-green-600 mr-3" />
+                <GraduationCap className="h-8 w-8 text-slate-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-900">Academic Excellence</h3>
               </div>
               <p className="text-gray-600 mb-3">
                 Third highest GPA (9.27) in B.Sc. Computer Science department, reflecting consistent academic
                 performance and dedication.
               </p>
-              <Badge className="bg-green-100 text-green-800">9.27 GPA</Badge>
+              <Badge className="bg-slate-100 text-slate-800">9.27 GPA</Badge>
             </Card>
 
-            <Card className="p-6 border-l-4 border-l-purple-500 hover:shadow-lg transition-shadow">
+            <Card className="p-6 border-l-4 border-l-slate-500 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
-                <User className="h-8 w-8 text-purple-600 mr-3" />
+                <User className="h-8 w-8 text-slate-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-900">Event Management</h3>
               </div>
               <p className="text-gray-600 mb-3">
                 Successfully organized inter-college coding events, demonstrating leadership skills and ability to
                 manage complex projects.
               </p>
-              <Badge className="bg-purple-100 text-purple-800">Event Organizer</Badge>
+              <Badge className="bg-slate-100 text-slate-800">Event Organizer</Badge>
             </Card>
           </div>
         </div>
       </section>
 
-     {/* Coding Profiles Section */}
 <section id="coding" className="py-20 bg-white">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-16">
@@ -617,15 +685,14 @@ export default function Portfolio() {
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {/* LeetCode */}
       <Card className="p-6 text-center hover:shadow-lg transition-shadow group">
-        <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
-          <Code className="h-8 w-8 text-orange-600" />
+        <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-slate-200 transition-colors">
+          <Code className="h-8 w-8 text-slate-600" />
         </div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">LeetCode</h3>
-        <p className="text-gray-600 mb-4">Top 1% globally with 100-day streak</p>
+        <p className="text-gray-600 mb-4">550+ problems solved with consistent daily practice</p>
         <a
-          href="https://leetcode.com/u/kunal222004/" // Replace with your actual LeetCode profile URL
+          href="https://leetcode.com/u/kunal222004/" 
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -638,8 +705,8 @@ export default function Portfolio() {
 
       {/* GeeksforGeeks */}
       <Card className="p-6 text-center hover:shadow-lg transition-shadow group">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
-          <BookOpen className="h-8 w-8 text-green-600" />
+        <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-slate-200 transition-colors">
+          <BookOpen className="h-8 w-8 text-slate-600" />
         </div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">GeeksforGeeks</h3>
         <p className="text-gray-600 mb-4">Active problem solver and contributor</p>
@@ -655,10 +722,9 @@ export default function Portfolio() {
         </a>
       </Card>
 
-      {/* GitHub */}
       <Card className="p-6 text-center hover:shadow-lg transition-shadow group">
-        <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-200 transition-colors">
-          <Github className="h-8 w-8 text-gray-600" />
+        <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-slate-200 transition-colors">
+          <Github className="h-8 w-8 text-slate-600" />
         </div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">GitHub</h3>
         <p className="text-gray-600 mb-4">Open source projects and contributions</p>
@@ -679,8 +745,7 @@ export default function Portfolio() {
         </div>
       </section>
 
- {/* Blog Section */}
-<section id="blog" className="py-20 bg-gradient-to-br from-indigo-50 to-blue-50">
+<section id="blog" className="py-20 bg-gray-50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-16">
       <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Blog & Insights</h2>
@@ -694,10 +759,10 @@ export default function Portfolio() {
       {/* Blog 1 */}
       <a href="https://medium.com/@sonawanekunal289/escaping-tutorial-hell-a-guide-for-learners-5837650e6309" target="_blank" rel="noopener noreferrer">
         <Card className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
-          <div className="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 p-6 text-white">
+          <div className="h-48 bg-slate-600 p-6 text-white">
             <BookOpen className="h-8 w-8 mb-4" />
             <h3 className="text-xl font-semibold">Escaping Tutorial Hell: A Guide for Learners</h3>
-            <p className="text-blue-100 mt-2">Learning & Education</p>
+            <p className="text-gray-200 mt-2">Learning & Education</p>
           </div>
           <CardContent className="p-6">
             <p className="text-gray-600 mb-4">
@@ -711,13 +776,12 @@ export default function Portfolio() {
         </Card>
       </a>
 
-      {/* Blog 2 */}
       <a href="https://medium.com/@sonawanekunal289/how-ai-is-revolutionizing-web-development-my-experience-with-cursor-ai-5d9637537f3d" target="_blank" rel="noopener noreferrer">
         <Card className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
-          <div className="h-48 bg-gradient-to-br from-purple-500 to-pink-600 p-6 text-white">
+          <div className="h-48 bg-slate-700 p-6 text-white">
             <Heart className="h-8 w-8 mb-4" />
             <h3 className="text-xl font-semibold">How AI is Revolutionizing Web Development: My Experience with Cursor AI</h3>
-            <p className="text-purple-100 mt-2">AI + Web Development</p>
+            <p className="text-gray-200 mt-2">AI + Web Development</p>
           </div>
           <CardContent className="p-6">
             <p className="text-gray-600 mb-4">
@@ -732,13 +796,12 @@ export default function Portfolio() {
         </Card>
       </a>
 
-      {/* Blog 3 */}
       <a href="https://medium.com/@sonawanekunal289/the-power-of-connections-more-than-just-networking-in-tech-3faded81e380" target="_blank" rel="noopener noreferrer">
         <Card className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
-          <div className="h-48 bg-gradient-to-br from-green-500 to-teal-600 p-6 text-white">
+          <div className="h-48 bg-slate-800 p-6 text-white">
             <Code className="h-8 w-8 mb-4" />
             <h3 className="text-xl font-semibold">Power Of Connections : More Than Just Networking in Tech</h3>
-            <p className="text-green-100 mt-2">Networking Insights</p>
+            <p className="text-gray-200 mt-2">Networking Insights</p>
           </div>
           <CardContent className="p-6">
             <p className="text-gray-600 mb-4">
@@ -753,7 +816,6 @@ export default function Portfolio() {
       </a>
     </div>
 
-    {/* Read All Articles Button */}
     <div className="mt-12 text-center">
       <a
         href="https://sonawanekunal289.medium.com/"
@@ -769,65 +831,7 @@ export default function Portfolio() {
   </div>
 </section>
 
-{/* Spiritual Touch Section 
-      <section id="spiritual" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Spiritual Connection</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Balancing technology with spirituality for a meaningful life
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-8 bg-gradient-to-br from-orange-50 to-red-50 border-l-4 border-l-orange-500">
-              <div className="text-center space-y-6">
-                <div className="text-4xl font-bold text-orange-600 mb-4">ॐ नमः शिवाय</div>
-                <div className="text-2xl font-semibold text-gray-800">हर हर महादेव</div>
-                <p className="text-gray-700">
-                  My spiritual journey is as important as my technical one. I believe in the power of connecting the ulimate source of energy .
-                   This balance helps me stay grounded and focused amidst the fast-paced
-                  world of technology.
-                </p>
-                <div className="flex justify-center space-x-4 pt-4">
-                  <Badge className="bg-orange-100 text-orange-800 px-4 py-2">Peace</Badge>
-                  <Badge className="bg-red-100 text-red-800 px-4 py-2">Values</Badge>
-                  <Badge className="bg-yellow-100 text-yellow-800 px-4 py-2">Knowledge</Badge>
-                </div>
-              </div>
-            </Card>
-
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="p-6 text-center">
-                <Heart className="h-8 w-8 text-red-500 mx-auto mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">Inner Peace</h3>
-                <p className="text-gray-600 text-sm">
-                  Finding tranquility amidst the chaos of competitive programming and deadlines
-                </p>
-              </Card>
-
-              <Card className="p-6 text-center">
-                <BookOpen className="h-8 w-8 text-blue-500 mx-auto mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">Continuous Learning</h3>
-                <p className="text-gray-600 text-sm">
-                  Embracing both technical knowledge and spiritual wisdom for holistic growth
-                </p>
-              </Card>
-
-              <Card className="p-6 text-center">
-                <Star className="h-8 w-8 text-yellow-500 mx-auto mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">Purpose-Driven</h3>
-                <p className="text-gray-600 text-sm">
-                  Using technology as a means to serve others and make a positive impact
-                </p>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-*/}
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section id="contact" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Let's Connect</h2>
@@ -842,15 +846,15 @@ export default function Portfolio() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Get in Touch</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <Mail className="h-5 w-5 text-blue-600 mr-3" />
+                    <Mail className="h-5 w-5 text-slate-600 mr-3" />
                     <span className="text-gray-600">sonawanekunal289@gmail.com</span>
                   </div>
                   <div className="flex items-center">
-                    <Phone className="h-5 w-5 text-green-600 mr-3" />
+                    <Phone className="h-5 w-5 text-slate-600 mr-3" />
                     <span className="text-gray-600">+91 99754 62090</span>
                   </div>
                   <div className="flex items-center">
-                    <MapPin className="h-5 w-5 text-red-600 mr-3" />
+                    <MapPin className="h-5 w-5 text-slate-600 mr-3" />
                     <span className="text-gray-600">Pune, Maharashtra, India</span>
                   </div>
                 </div>
@@ -859,7 +863,6 @@ export default function Portfolio() {
               <Card className="p-6">
   <h3 className="text-xl font-semibold text-gray-900 mb-4">Social Links</h3>
   <div className="flex flex-wrap gap-4">
-    {/* LinkedIn */}
     <a
       href="https://linkedin.com/in/kunalsonawane224"
       target="_blank"
@@ -871,7 +874,6 @@ export default function Portfolio() {
       </Button>
     </a>
 
-    {/* GitHub */}
     <a
       href="https://github.com/Kunal-sonawanee"
       target="_blank"
@@ -883,14 +885,12 @@ export default function Portfolio() {
       </Button>
     </a>
 
-    {/* Medium (custom SVG or fallback text) */}
     <a
       href="https://medium.com/@sonawanekunal289"
       target="_blank"
       rel="noopener noreferrer"
     >
       <Button variant="outline" size="sm" className="flex items-center">
-        {/* Use an icon if available, or simple 'M' fallback */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1043.63 592.71"
@@ -903,7 +903,6 @@ export default function Portfolio() {
       </Button>
     </a>
 
-    {/* Instagram */}
     <a
       href="https://instagram.com/kunal.sonawanee"
       target="_blank"
@@ -924,13 +923,13 @@ export default function Portfolio() {
                   Download my latest resume to learn more about my experience and skills.
                 </p>
                 <a
-  href="https://drive.google.com/file/d/1EdGQT-kP9MsphPxeKWT21X7f4qEkc2T4/view?usp=sharing"
+  href="https://drive.google.com/file/d/11ZNvvM5GCcaVPZREEfwtwVsHYkJRgca2/view?usp=drive_link"
   download
   className="w-full"
   target="_blank"
   rel="noopener noreferrer"
 >
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 shadow-lg hover:shadow-xl transition-all duration-200 font-semibold">
                   <Download className="mr-2 h-4 w-4" />
                   Download Resume 
                 </Button>
@@ -940,7 +939,7 @@ export default function Portfolio() {
             <Card className="p-6">
   <h3 className="text-xl font-semibold text-gray-900 mb-4">Send a Message</h3>
   <form
-    action="https://formspree.io/f/movwvjwr" // ← replace with your real Formspree endpoint
+    action="https://formspree.io/f/movwvjwr"
     method="POST"
     className="space-y-4"
   >
@@ -970,7 +969,7 @@ export default function Portfolio() {
     </div>
     <Button
       type="submit"
-      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+      className="w-full bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 shadow-lg hover:shadow-xl transition-all duration-200 font-semibold"
     >
       <Mail className="mr-2 h-4 w-4" />
       Send Message
@@ -982,11 +981,10 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            <div className="text-2xl font-bold text-white mb-4">
               Kunal Sonawane
             </div>
             <p className="text-gray-400 mb-6">Building the future, one line of code at a time.</p>
@@ -1005,7 +1003,7 @@ export default function Portfolio() {
               </a>
             </div>
             <div className="border-t border-gray-800 pt-8">
-              <p className="text-gray-400 text-sm">© 2024 Kunal Sonawane. Made with ❤️ and lots of ☕</p>
+              <p className="text-gray-400 text-sm">© 2025 Kunal Sonawane. Made with ❤️ and lots of ☕</p>
               
             </div>
           </div>
